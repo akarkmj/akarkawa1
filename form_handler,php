@@ -1,0 +1,43 @@
+<?php
+
+
+
+
+if(isset($_POST['submit'])){
+	$pass=$_POST['password'];
+    
+
+	echo "email : ".$_POST['email'];
+	echo "<br>";
+	if(strlen($pass)> 8 && strlen($pass) < 16 ){
+		echo "password:".$pass;
+
+	}else{
+		echo "your password not btween 8 and 16 charectrers";
+	}
+
+	echo "<br>";
+	echo "ragaz : ".$_POST['gender'];
+	echo "<br>";
+	echo "favorite color: ";
+	echo "<br>";
+
+	if (isset($_POST['color'])) {
+        $colors=$_POST['color'];
+		foreach ($colors as $k) {
+		echo $k."<br>";
+	}
+    }else{
+
+		echo "no favorite color!";
+	}
+	
+	
+
+}
+else{
+	
+	echo"<script> alert('please submit the form!'); window.location.href=\"form.html\" ;</script>";
+	
+}
+?>
